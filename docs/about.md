@@ -1,12 +1,16 @@
 # About
 
-Welcome to the about page.
+ようこそ about ページへ。
 
-This markdown supports html elements like the `p` tag coupled with inline styles
+このマークダウンは、`p` タグとインラインスタイルを組み合わせたように、HTML要素をサポートしています。
+
+```html
+<p style="color: var(--vp-c-brand-dark); border: 1px solid var(--vp-c-brand-dark); border-radius:5px; padding: 1rem;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+```
 
 <p style="color: var(--vp-c-brand-dark); border: 1px solid var(--vp-c-brand-dark); border-radius:5px; padding: 1rem;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 
-Even satire code snippets with syntax highlighting are also supported. 😅
+シンタックスハイライト付きの風刺コードスニペットもサポートされています。😅
 
 ```js
 const lang = prompt("What is your favorite programming language?");
@@ -15,7 +19,17 @@ const lang = prompt("What is your favorite programming language?");
   ? alert("JavaScript to the world! 🚀🟡")
   : alert(`We don't permit such languages here 💩`);
 ```
+<script>
+const lang = prompt("What is your favorite programming language?");
 
-Of course, images are not left out.
+(lang === "JavaScript") | (lang === "javascript") | (lang === "js")
+  ? alert("JavaScript to the world! 🚀🟡")
+  : alert(`We don't permit such languages here 💩`);
+</script>
 
-<img src="/logo.svg" alt="adocs logo">
+もちろん、画像も忘れていません。
+
+```html
+<img src="/logo.svg" alt="adocs ロゴ">
+```
+<img src="/logo.svg" alt="adocs ロゴ">

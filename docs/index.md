@@ -7,8 +7,8 @@ hero:
   text: LIBOTマニュアル.
   image:
     src: /logo-big.svg
-    alt: Adocs logo
-  tagline: A free to use template for creating docs for your projects
+    alt: logo-big-alt
+  tagline: 改行はできない
   actions:
     - theme: brand
       text: はじめる
