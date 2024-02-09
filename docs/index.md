@@ -3,18 +3,18 @@ layout: home
 
 # Hero section
 hero:
-  name: Adocs
-  text: Static docs template built with VitePress.
+  name: LIBOT
+  text: LIBOTマニュアル.
   image:
     src: /logo-big.svg
     alt: Adocs logo
   tagline: A free to use template for creating docs for your projects
   actions:
     - theme: brand
-      text: Get Started
+      text: はじめる
       link: /guide
     - theme: alt
-      text: View on GitHub
+      text: GitHubで見る
       link: https://github.com/Evavic44/adocs
 
 # Features section
