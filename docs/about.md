@@ -19,13 +19,6 @@ const lang = prompt("What is your favorite programming language?");
   ? alert("JavaScript to the world! 🚀🟡")
   : alert(`We don't permit such languages here 💩`);
 ```
-<script>
-const lang = prompt("What is your favorite programming language?");
-
-(lang === "JavaScript") | (lang === "javascript") | (lang === "js")
-  ? alert("JavaScript to the world! 🚀🟡")
-  : alert(`We don't permit such languages here 💩`);
-</script>
 
 もちろん、画像も忘れていません。
 
