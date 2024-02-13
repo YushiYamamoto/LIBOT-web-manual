@@ -6,7 +6,7 @@ hero:
   name: 業界初の
   text: LINE集客システム
   image:
-    src: https://www.libot.jp/assets/images/logo.png
+    src: /logo.png
     alt: LIBOTマニュアル
   tagline: ファンがファンを呼ぶ超集客型LINEシステム
   actions:

@@ -1,13 +1,13 @@
 export default {
   title: "LIBOT WEBマニュアル",
-  description: "デスクリプション",
+  description: "LIBOT WEBマニュアルでは、LIBOTの使い方を丁寧に解説しています。ログイン方法から基本操作、便利な機能の利用方法など、LIBOTを最大限に活用するための情報が満載です。このマニュアルを参考に、LIBOTを快適に利用し、業務効率化を図っていただければ幸いです。",
   lang: 'ja',
   cleanUrls: true,
 // この設定が無効になっていると、Markdownに間違ったリンクがある場合に、ビルド時に無効リンクのエラーが発生します。
   ignoreDeadLinks: true,
   
   themeConfig: {
-    logo: "https://www.libot.jp/assets/images/logo.png",
+    logo: "/logo.png",
     siteTitle: "WEBマニュアル",
     search: {
       provider: "local",
