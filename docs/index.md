@@ -3,34 +3,38 @@ layout: home
 
 # Hero section
 hero:
-  name: LIBOT
-  text: LIBOTマニュアル.
+  name: 業界初の
+  text: LINE集客システム
   image:
-    src: /logo-big.svg
-    alt: logo-big-alt
-  tagline: 改行はできない
+    src: https://www.libot.jp/assets/images/logo.png
+    alt: LIBOTマニュアル
+  tagline: ファンがファンを呼ぶ超集客型LINEシステム
   actions:
     - theme: brand
-      text: はじめる
-      link: /guide
+      text: はじめに
+      link: /content/libot
     - theme: alt
-      text: GitHubで見る
-      link: https://github.com/Evavic44/adocs
+      text: LIBOTを知る
+      link: https://ai-bot.co.jp/libot/
 
 # Features section
 features:
-  - icon: ⚡️
-    title: Adocs, The DX that can't be beat
-    details: Lorem ipsum...
-  - icon: 🎉
-    title: Power of Vue meets Markdown
-    details: Lorem ipsum...
-  - icon: 🔥
-    title: Simple and minimal, always
-    details: Lorem ipsum...
-  - icon: 🎀
-    title: Stylish and cool
-    details: Lorem ipsum...
+  - icon: 🏠
+    title: 初期設定の方法
+    link: /content/libot
+    details: LIBOTを利用するためのアカウント登録、基本設定の方法を説明しています。
+  - icon: ⚙️
+    title: 機能一覧
+    link: /content/features/index
+    details: LIBOTが提供している主な機能の一覧と簡単な説明を掲載しています。
+  - icon: 📚
+    title: ヘルプページ
+    link: /content/help/index
+    details: LIBOTの利用でわからないことやトラブルが発生した場合の対処方法をQ&A形式で掲載しています。
+  - icon: 🔄
+    title: 更新情報
+    link: /content/updates
+    details: LIBOTの最近のアップデート情報を掲載しています。新機能の追加や仕様変更点などが確認できます。
 
 # Meta property
 head:
@@ -39,29 +43,35 @@ head:
       content: website
   - - meta
     - property: og:title
-      content: Adocs
+      content: LIBOT
   - - meta
     - property: og:image
-      content: https://user-images.githubusercontent.com/62628408/200117602-4b274d14-b1b2-4f61-8dcd-9f9482c677a0.png
+      content: https://.png
   - - meta
     - property: og:url
-      content: https://vitejs.dev/blog/announcing-vite3
+      content: https://
   - - meta
     - name: title
-      content: Adocs
+      content: LIBOT
   - - meta
     - name: twitter:card
-      content: https://user-images.githubusercontent.com/62628408/200117602-4b274d14-b1b2-4f61-8dcd-9f9482c677a0.png
+      content: https://.png
   - - link
     - rel: icon
       type: image/svg
-      href: logo.svg
+      href: logo
 ---
 
 <!-- Custom home layout -->
 <div class="custom-layout">
-  <h1>🏀</h1>
-  <h1>Custom Layout</h1>
+  <a href="https://ai-bot.co.jp/libot/#libot-example" target="_blank">
+  <img src="https://aibot-line.com/wp-content/uploads/2022/10/S__45605030.jpg">
+</a>
+</div>
+<!-- Custom home layout -->
+<div class="custom-layout">
+  <h1>💡h1</h1>
+  <h2>Custom Layout</h2>
   <p>This section was added using plain HTML and CSS.</p>
   <a href="https://github.com/Evavic44/adocs/blob/main/docs/index.md#custom-layout" target="_blank" class="btn">Source Code</a>
 </div>
