@@ -77,6 +77,11 @@ export default {
         collapsible: false,
         link: "/guide",
       },
+      {
+        text: "✏️マークダウン",
+        collapsible: false,
+        link: "/markdown",
+      },
     ],
     // you can disable the previous and next page here
     docFooter: {
