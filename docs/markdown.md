@@ -1,4 +1,4 @@
-# About
+# Markdown
 
 ようこそ about ページへ。
 
