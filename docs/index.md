@@ -6,7 +6,7 @@ hero:
   name: 業界初の
   text: LINE集客システム
   image:
-    src: /logo.png
+    src: https://ai-bot.co.jp/libot/image/top.png
     alt: LIBOTマニュアル
   tagline: ファンがファンを呼ぶ超集客型LINEシステム
   actions:
@@ -61,16 +61,16 @@ head:
       type: image/svg
       href: logo
 ---
-
 <!-- Custom home layout -->
 <div class="custom-layout">
-  <a href="https://ai-bot.co.jp/libot/#libot-example" target="_blank">
-  <img src="https://aibot-line.com/wp-content/uploads/2022/10/S__45605030.jpg">
-</a>
+<div style="position: relative; width: 100%; height: 0; padding-top: 19.3548%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF8p1AFjDc&#x2F;YkCJPp17aRmINgUDmW8JMg&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
 </div>
-<!-- Custom home layout -->
-<div class="custom-layout">
-  <h1>💡h1</h1>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF8p1AFjDc&#x2F;YkCJPp17aRmINgUDmW8JMg&#x2F;view?utm_content=DAF8p1AFjDc&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
   <h2>Custom Layout</h2>
   <p>This section was added using plain HTML and CSS.</p>
   <a href="https://github.com/Evavic44/adocs/blob/main/docs/index.md#custom-layout" target="_blank" class="btn">Source Code</a>

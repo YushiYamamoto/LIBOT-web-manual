@@ -42,10 +42,11 @@ export default {
         text: "トラブルシューティング",
         collapsible: false,
         link: "/content/troubleshooting",
-      },      {
+      },
+      {
         text: "更新情報",
         collapsible: false,
-        tlink: "content/updates",
+        link: "/content/updates",
       },
       {
         text: "導入方法",
