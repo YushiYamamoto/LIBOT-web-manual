@@ -17,6 +17,8 @@ cd adocs
 npm install
 
 npm run docs:dev
+
+npx vitepress build docs
 ```
 
 サイトをご覧いただくには、[https://localhost:5173](https://localhost:5173)にアクセスしてください
