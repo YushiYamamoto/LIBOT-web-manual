@@ -5,100 +5,103 @@ export default {
   cleanUrls: true,
 // この設定が無効になっていると、Markdownに間違ったリンクがある場合に、ビルド時に無効リンクのエラーが発生します。
   ignoreDeadLinks: true,
-  
   themeConfig: {
     logo: "/logo.png",
-    siteTitle: "WEBマニュアル",
+    siteTitle: "スタッフガイド📝",
     search: {
-      provider: "local",
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+                placeholder: 'キーワードを入力して検索',
+                translations: {
+                button: {
+                buttonText: 'キーワードを入力して検索',
+                buttonAriaLabel: 'キーワードを入力して検索'
+                },
+                modal: {
+                searchBox: {
+                resetButtonTitle: '検索条件をリセット',
+                resetButtonAriaLabel: '検索条件をリセット',
+                cancelButtonText: 'キャンセル',
+                cancelButtonAriaLabel: 'キャンセル'
+                },
+                startScreen: {
+                recentSearchesTitle: '検索履歴',
+                noRecentSearchesText: '検索履歴はありません',
+                saveRecentSearchButtonTitle: '検索履歴に保存',
+                removeRecentSearchButtonTitle: '検索履歴から削除',
+                favoriteSearchesTitle: 'お気に入り',
+                removeFavoriteSearchButtonTitle: 'お気に入りから削除'
+                },
+                errorScreen: {
+                titleText: '結果を取得できません',
+                helpText: 'ネットワーク接続を確認してください'
+                },
+                footer: {
+                selectText: '選択',
+                navigateText: '切り替え',
+                closeText: '閉じる',
+                searchByText: 'テキストを検索'
+                },
+                noResultsScreen: {
+                noResultsText: '関連する結果が見つかりません',
+                suggestedQueryText: '別のクエリを試してみてください',
+                reportMissingResultsText: 'このクエリには結果があるはずですか？',
+                reportMissingResultsLinkText: 'フィードバックを送信'
+                }
+              }
+            }
+          }
+        }
+      }
     },
-    // Navbar Link
+    // ナビゲーションバー
     nav: [
-      { text: "初期設定の方法", link: "/content/libot" },
-      {
-        // Dropdown Menu
-        text: "機能紹介",
-        items: [
-          { text: "機能一覧", link: "/content/features/index" },
-          { text: "01", link: "/content/features/01" },
-        ],
-      },
-      { text: "ヘルプページ", link: "/content/help/index" },
-      { text: "更新情報", link: "/content/updates" },
+      { text: "📖 はじめに", link: "/content/aibot" },
     ],
-    // Sidebar
+    // サイドバー
     sidebar: [
+      { text: "📖 はじめに", link: "/content/aibot" },
       {
-        text: "はじめに",
-        collapsible: false,
-        link: "/content/libot",
-      },
-      {
-        text: "初期設定",
-        collapsible: false,
-        link: "/content/setup-guide",
-      },
-      {
-        text: "トラブルシューティング",
-        collapsible: false,
-        link: "/content/troubleshooting",
-      },
-      {
-        text: "更新情報",
-        collapsible: false,
-        link: "/content/updates",
-      },
-      {
-        text: "導入方法",
-        collapsible: true,
+        text: "WEBマニュアル",collapsed: false,
         items: [
-          { text: "初期設定", link: "/content/installation/index" },
-        ],
-      },
+      { text: "📝 記事の更新方法", link: "/content/01-manual/更新" },
+      { text: "📝 マークダウン記法ガイド", link: "/content/01-manual/markdown" },
+      { text: "📝 ライティングガイド", link: "/content/01-manual/guide" },
+      { text: "ℹ️ 記事サンプル", link: "/content/01-intro/" },
+    ],
+  },
       {
-        text: "機能紹介",
-        collapsible: false,
+        text: "テストマニュアル",collapsed: true,
         items: [
-          { text: "機能一覧", link: "/content/features/index" },
-          { text: "01", link: "/content/features/01" },
+          { text: "テスト手順", link: "/content/02-test/index" },
+          { text: "バグ報告の書き方", link: "/content/02-test/index" },
+          { text: "テスト記録サンプル", link: "/content/02-test/index" },
         ],
-      },
-      {
-        text: "ヘルプ",
-        collapsible: true,
-        items: [
-          { text: "目次", link: "/content/help/index" },
-          { text: "困りごとから探す", link: "/content/help/problem" },
-          { text: "Q&A", link: "/content/help/QandA" },
-          { text: "目的から探す", link: "/content/help/purpose" },
-        ],
-      },
-      {
-        text: "💡ガイド",
-        collapsible: false,
-        link: "/guide",
-      },
-      {
-        text: "✏️マークダウン",
-        collapsible: false,
-        link: "/markdown",
       },
     ],
-    // you can disable the previous and next page here
     docFooter: {
       prev: "前のページ",
       next: "次のページ",
     },
+    outline: {
+      label: '目次'
+    },
     footer: {
       message: "",
-      copyright: "Copyright © 2024-AI BOT",
+      copyright: "© 2024 AIBOT Inc. All Rights Reserved",
     },
     markdown: {
       theme: "material-palenight",
       lineNumbers: true,
     },
+    langMenuLabel: '多言語',
+    darkModeSwitchLabel: 'ダークモード',
+    lightModeSwitchTitle: 'ライトモードに切り替え',
+    darkModeSwitchTitle: 'ダークモードに切り替え',
     // Mobile Config only
-    returnToTopLabel: 'Go to Top',
-    sidebarMenuLabel: 'Menu',
+    returnToTopLabel: 'トップに戻る',
+    sidebarMenuLabel: 'メニュー',
   },
 };
