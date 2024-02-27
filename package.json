@@ -1,18 +1,26 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "<div align=\"center\">   <img src=\"https://adocs.vercel.app/logo-big.svg\" width=\"100px\" height=\"100px\" alt=\"adocs logo\" />   <h1>Adocs</h1>   <p>A docs template built using <a href=\"https://vitepress.vuejs.org\">VitePress</a></p>   <p>This repository serves as a resource for the tutorial, <a href=\"https://www.freecodecamp.org/news/how-to-build-a-modern-documentation-site-with-vitepress/\">How to Build a Modern Documentation Site with VitePress</a> posted on freeCodeCamp</p> </div>",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "documate:upload": "documate upload"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "@documate/documate": "^0.2.1",
+    "vitepress": "^1.0.0-rc.42",
+    "vue": "^3.4.18"
+  },
   "dependencies": {
-    "vitepress": "^1.0.0-alpha.27",
-    "vue": "^3.2.41"
+    "@documate/vue": "^0.3.1"
   }
 }

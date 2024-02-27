@@ -1,13 +1,71 @@
 {
+<<<<<<< HEAD
   "hash": "323662d9",
   "browserHash": "2e01b412",
+=======
+  "hash": "c6c9ca13",
+  "configHash": "b3565876",
+  "lockfileHash": "3b5b7bc6",
+  "browserHash": "0b29e2dc",
+>>>>>>> ac65a019bfdf46f8729a88a29713f8f9e17617c3
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
+<<<<<<< HEAD
       "fileHash": "5cb8ac18",
       "needsInterop": false
     }
   },
   "chunks": {}
+=======
+      "fileHash": "6b5ed9f8",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "fcad494e",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "29a322b5",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/integrations/useFocusTrap": {
+      "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
+      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+      "fileHash": "4ea11744",
+      "needsInterop": false
+    },
+    "vitepress > mark.js/src/vanilla.js": {
+      "src": "../../../../node_modules/mark.js/src/vanilla.js",
+      "file": "vitepress___mark__js_src_vanilla__js.js",
+      "fileHash": "a22d28ca",
+      "needsInterop": false
+    },
+    "vitepress > minisearch": {
+      "src": "../../../../node_modules/minisearch/dist/es/index.js",
+      "file": "vitepress___minisearch.js",
+      "fileHash": "40787a76",
+      "needsInterop": false
+    },
+    "@documate/vue": {
+      "src": "../../../../node_modules/@documate/vue/dist/documate.js",
+      "file": "@documate_vue.js",
+      "fileHash": "c4188f24",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-QXV7JJUW": {
+      "file": "chunk-QXV7JJUW.js"
+    },
+    "chunk-IMASPWRS": {
+      "file": "chunk-IMASPWRS.js"
+    }
+  }
+>>>>>>> ac65a019bfdf46f8729a88a29713f8f9e17617c3
 }

@@ -1,131 +1,131 @@
-![banner](https://user-images.githubusercontent.com/62628408/201538130-a1008969-06ae-4aad-9ea0-b77384d6bac1.png)
+![banner](https://user-images.githubusercontent.com/62628408/201538130-a100889-06ae-4aad-9ea0-b77384d6bac1.png)
 
-# How to build modern docs with VitePress
+# VitePressを使ったモダンなドキュメントの構築方法
 
 ::: info
-Documentation is a crucial aspect of software development that is often neglected by developers due to the hassle of maintaining one, or even choosing the right tools to use. This is why it's important to use tools that simplify this process. In this tutorial, you'll learn how to build a complete docs site quickly by utilizing a modern tool called, VitePress.
+ドキュメントはソフトウェア開発の重要な側面であり、開発者がしばしばメンテナンスの手間や適切なツールの選択によって軽視されることがあります。そのため、このプロセスを簡素化するツールを使用することが重要です。このチュートリアルでは、VitePressというモダンなツールを使用して、素早く完全なドキュメントサイトを構築する方法を学びます。
 :::
 
-## Definition
+## 定義
 
-[VitePress](https://vitepress.vuejs.org/) is a simple and performant static site generator built on top of [Vite](https://vitejs.dev) for creating docs in a matter of minutes. It is powered by [Vuejs](https://vuejs.org/), and Vite with built in customizable components. VitePress powers some popular documentation sites like Vuejs, [Vitest](https://vitest.dev/), [faker.js](https://fakerjs.dev/), and Vite itself.
+[VitePress](https://vitepress.vuejs.org/)は、[Vite](https://vitejs.dev)の上に構築されたシンプルで高性能な静的サイトジェネレータであり、[Vuejs](https://vuejs.org/)とViteでパワーアップされ、組み込みのカスタマイズ可能なコンポーネントが備わっています。 VitePressは、Vuejs、[Vitest](https://vitest.dev/)、[faker.js](https://fakerjs.dev/)、Vite自体など、いくつかの人気のあるドキュメントサイトをパワーアップしています。
 
-## Prerequisites
+## 前提条件
 
-To follow along with this tutorial, you need to have a basic understanding of the following:
+このチュートリアルに従うには、次の基本的な理解が必要です：
 
-- [Markdown](https://daringfireball.net/projects/markdown/) syntax
-- Brief understanding of NPM and Vite
+- [Markdown](https://daringfireball.net/projects/markdown/)の構文
+- NPMとViteの基本的な理解
 
-Here's a screenshot of what you'll be building at the end of this tutorial.
+このチュートリアルの最後に構築するもののスクリーンショットです。
 
 ![final-works](https://user-images.githubusercontent.com/62628408/201538907-fe67b791-02c4-413c-ae3d-02635b53e20b.png)
 
-## Step. 1: Create a new project
+## ステップ1：新しいプロジェクトを作成する
 
-If you already have a folder created, you can skip this step to the next one if not, use the following command to create a project folder and move into the folder.
+すでにフォルダーを作成している場合は、このステップをスキップして次のステップに進むことができます。そうでない場合は、次のコマンドを使用してプロジェクトフォルダーを作成し、そのフォルダーに移動します。
 
 ```bash
-mkdir project-name
-cd project-name
+mkdir プロジェクト名
+cd プロジェクト名
 ```
 
-Next you need to initialize with your preferred package manager. I'll be using NPM for the rest of this guide.
+次に、お好みのパッケージマネージャーで初期化する必要があります。このガイドの残りの部分ではNPMを使用します。
 
 ```bash
 npm init
-// or use this command if you want to skip all the questions
+// または、すべての質問をスキップしたい場合は、次のコマンドを使用します
 npm init -y
 ```
 
-If you used the first command, you'll be prompted with certain questions, complete them as appropriate. After a successful operation, you should have a package.json file in your root directory; This is where the VitePress dev dependency will be installed.
+最初のコマンドを使用した場合、特定の質問が表示されますので、適切に完了してください。操作が成功した後、ルートディレクトリにpackage.jsonファイルがあるはずです。ここにVitePressのdev依存関係がインストールされます。
 
-## Step. 2: Install VitePress
+## ステップ2：VitePressのインストール
 
-Next step is to add VitePress and Vue as dev dependencies to your project.
+次のステップは、VitePressとVueをプロジェクトのdev依存関係として追加することです。
 
 ```bash
 npm install vue vitepress --save-dev
-// or
+// または
 npm install -D vue vitepress
 ```
 
-You've successfully installed VitePress and Vue and added it as a dev dependency. Now you can start creating creating your respective doc files, but before you do that, I believe it's essential to explain how VitePress works.
+VitePressとVueが正常にインストールされ、dev依存関係として追加されました。これで、各自のドキュメントファイルを作成できるようになりましたが、その前にVitePressの動作方法を説明することが重要だと思います。
 
-## How does VitePress work?
+## VitePressの動作原理
 
-VitePress makes use of Markdown `.md` files for it's markup which is automatically converted into static HTML. In other for this to work, a special folder called `docs` is created in the root directory.
+VitePressはMarkdown `.md`ファイルを使用してマークアップを行いますが、これは自動的に静的HTMLに変換されます。これを実現するために、ルートディレクトリに `docs` という特別なフォルダーが作成されます。
 
-This folder behaves similar to the `pages` folder in NextJS, where any `.js` file created in the directory is automatically treated as a web page. In this case a file called `index.md` will be the treated as `index.html` and serve as the root of your docs template.
+このフォルダーは、NextJSの `pages` フォルダーと同様の動作をします。ディレクトリ内に作成された任意の `.js` ファイルは、自動的にウェブページとして扱われます。この場合、`index.md` というファイルは `index.html` として扱われ、ドキュメントテンプレートのルートとして機能します。
 
-Now you understand how that works, you can now create your respective doc files.
+これで、動作が理解できたので、各自のドキュメントファイルを作成できるようになりました。
 
-## Step 3. Create respective files
+## ステップ3：各自のファイルを作成する
 
-You can create the docs folder and the index.md file manually, or you can do it with the terminal like a hacker.
+ドキュメントフォルダーとindex.mdファイルを手動で作成するか、ターミナルを使用して以下のコマンドを使用して作成できます。
 
 ```bash
 mkdir docs && echo '# Hello VitePress' > docs/index.md
 ```
 
-This command is simply creating a folder called docs and adding an index.md file containing a h1 element that says, "Hello World".
+このコマンドは、単にdocsという名前のフォルダーを作成し、その中に 'Hello World' というh1要素を含むindex.mdファイルを追加しています。
 
 ![create respective files](https://user-images.githubusercontent.com/62628408/201539157-0b662a53-4aad-4ce5-b22c-228aa618d7b8.png)
 
-With this, you can boot up your dev environment to see what has been created so far.
+これで、これまでに作成された内容を確認するために開発環境を起動できます。
 
-## Step 4: Boot up dev environment
+## ステップ4：開発環境を起動する
 
-In other to run your docs locally, you need to add the following scripts inside the package.json file. Simply copy the code below and replace it with the "script" object.
+ローカルでドキュメントを実行するには、package.jsonファイルに以下のスクリプトを追加する必要があります。以下のコードをコピーして、"scripts"オブジェクトでそれらを置き換えます。
 
-```js
+```json
 // package.json
 "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
-  },
+}
 ```
 
-Finally, the documentation site can be served on a local server by running the command below:
+最後に、以下のコマンドを実行してローカルサーバー上でドキュメントサイトを提供できます。
 
 ```bash
 npm run docs:dev
 ```
 
-This will start a hot-reloading development server at `http://localhost:5173`, and you can visit it to see your docs site.
+これにより、`http://localhost:5173`でホットリロードの開発サーバーが起動し、ドキュメントサイトを表示できます。
 
-### Output
+### 出力
 
 ![boot-dev-server](https://user-images.githubusercontent.com/62628408/201539308-bfc07160-bac2-4e91-ae90-46f9f3acd3cc.png)
 
-All you had to do was add the markup and VitePress handled the looks from it's template engine. In the next session, you'll learn how you can customize the docs to fit your needs.
+マークアップを追加するだけで、VitePressが見た目を処理しました。次のセッションでは、必要に応じてドキュメントをカスタマイズする方法について学びます。
 
-## How to customize your docs
+## ドキュメントのカスタマイズ方法
 
-First create a `.vitepress` folder inside the docs directory you created earlier on. This is where all VitePress-specific files will be placed. Inside this new directory, you need a `config.js` file. Again, you can use the terminal command as a hacker.
+まず最初に、先ほど作成した`docs`ディレクトリ内に`.vitepress`フォルダーを作成します。これは、すべてのVitePress固有のファイルが配置される場所です。この新しいディレクトリ内に、`config.js`ファイルが必要です。再び、ハッカーのようにターミナルコマンドを使用できます。
 
 ```bash
 mkdir .vitepress && touch .vitepress/config.js
 ```
 
-To test this config file, you can start by changing the meta title and description of your docs site. Copy this markup and paste into the `config.j`s file.
+この設定ファイルをテストするには、まずドキュメントサイトのメタタイトルと説明を変更してみることから始めましょう。以下のマークアップをコピーして、`config.js`ファイルに貼り付けます。
 
 ```js
 // .vitepress/config.js
 export default {
   title: "Adocs",
-  description: "An awesome docs template built by me",
+  description: "私が作成した素晴らしいドキュメントテンプレート",
 };
 ```
 
-If you check the dev tools, you should see the changes in the meta title and description.
+デベロッパーツールをチェックすると、メタタイトルと説明が変更されていることがわかります。
 
 ![title-and-description](https://user-images.githubusercontent.com/62628408/201539383-8b05db4c-dc00-4919-8bbc-f29cc77b2a00.png)
 
-## Title and Logo
+## タイトルとロゴ
 
-In other to change the logo title and add an image, copy the markup below and paste it into a new object called `themeConfig` inside the same `config.js` file. This will overwrite the current title and add a logo your docs site.
+ロゴタイトルを変更し、イメージを追加するには、同じ`config.js`ファイル内の`themeConfig`オブジェクトに以下のマークアップを貼り付けます。これにより、現在のタイトルが上書きされ、ドキュメントサイトにロゴが追加されます。
 
 ```js
 // config.js
@@ -137,20 +137,20 @@ export default {
 };
 ```
 
-For the image source, you can pass in an image URL or specify the path to a local image. To do it locally, make sure you place the image within the `public` directory.
+画像ソースには、画像URLを渡すか、ローカル画像へのパスを指定します。ローカルで行う場合は、画像を `public` ディレクトリ内に配置してください。
 
-### Output
+### 出力
 
 ![logo-and-title](https://user-images.githubusercontent.com/62628408/201539442-123b92cc-3c59-423d-a183-280ab8eb23be.png)
 
 ::: warning
-Note: files in the public directory are served at the root path.
-So instead of `../public/logo.svg`, just use `/logo.svg`.
+注意：`public`ディレクトリ内のファイルは、ルートパスで提供されます。
+そのため、`../public/logo.svg`の代わりに`/logo.svg`を使用してください。
 :::
 
-## Navbar
+## ナビゲーションバー
 
-Customizing the `Navbar` is a pretty straightforward process as well. Inside your `themeConfig` file, paste the markup below. Here we have an object that contains two properties. The anchor text `text`, and the path, `link` defines the URL path.
+`Navbar`のカスタマイズは非常に簡単です。`themeConfig`ファイル内に、次のマークアップを貼り付けます。ここでは、アンカーテキスト `text` とパス `link` を定義したオブジェクトを持っています。
 
 ```js
 // .vitepress/config.js
@@ -167,13 +167,13 @@ Customizing the `Navbar` is a pretty straightforward process as well. Inside you
 }
 ```
 
-Essentially navigating to `http://localhost:5173/about` should take you to an about page(though we haven't created that yet).
+基本的には、`http://localhost:5173/about` に移動すると、aboutページに移動するはずです（まだ作成していませんが）。
 
-### Output
+### 出力
 
 ![navbar](https://user-images.githubusercontent.com/62628408/201539594-8e8f1d80-19dc-4335-b82b-fee5a23a5d30.png)
 
-Navigation links can also be dropdown menus too. To add one, simply replace any of the links property with the items object which contains an array of links.
+ナビゲーションリンクは、ドロップダウンメニューにすることもできます。これを追加するには、リンクのプロパティの代わりにアイテムオブジェクトを使用します。これには、リンクの配列が含まれます。
 
 ```js
 // .vitepress/config.js
@@ -187,94 +187,178 @@ Navigation links can also be dropdown menus too. To add one, simply replace any 
 },
 ```
 
-Now changelog will become a dropdown menu with the respective links you pass inside.
+これで、changelogがそれぞれのリンクを内部に持つドロップダウンメニューになります。
 
-### Output
+### 出力
 
-![dropdown-menu](https://user-images.githubusercontent.com/62628408/201539670-330a0e0f-ed81-46b0-87cf-0d2b0b0c387b.png)
+![dropdown-menu](ーカルでドキュメントを実行するには、package.jsonファイルに以下のスクリプトを追加する必要があります。以下のコードをコピーして、"scripts"オブジェクトでそれらを置き換えます。
 
-## Social Icons
+```json
+// package.json
+"scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+}
+```
 
-Navigation menus usually have social icons visitors can use to visit your social platforms. To add that, define a new object called socialLinks inside themeConfig and simply pass in the social icon and the link you want it to navigate to.
+最後に、以下のコマンドを実行してローカルサーバー上でドキュメントサイトを提供できます。
+
+```bash
+npm run docs:dev
+```
+
+これにより、`http://localhost:5173`でホットリロードの開発サーバーが起動し、ドキュメントサイトを表示できます。
+
+### 出力
+
+![boot-dev-server](https://user-images.githubusercontent.com/62628408/201539308-bfc07160-bac2-4e91-ae90-46f9f3acd3cc.png)
+
+マークアップを追加するだけで、VitePressが見た目を処理しました。次のセッションでは、必要に応じてドキュメントをカスタマイズする方法について学びます。
+
+## ドキュメントのカスタマイズ方法
+
+まず最初に、先ほど作成した`docs`ディレクトリ内に`.vitepress`フォルダーを作成します。これは、すべてのVitePress固有のファイルが配置される場所です。この新しいディレクトリ内に、`config.js`ファイルが必要です。再び、ハッカーのようにターミナルコマンドを使用できます。
+
+```bash
+mkdir .vitepress && touch .vitepress/config.js
+```
+
+この設定ファイルをテストするには、まずドキュメントサイトのメタタイトルと説明を変更してみることから始めましょう。以下のマークアップをコピーして、`config.js`ファイルに貼り付けます。
 
 ```js
 // .vitepress/config.js
-socialLinks: [
-  { icon: "github", link: "https://github.com/Evavic44/adocs" },
-  { icon: "twitter", link: "https://twitter.com/victorekea" },
-  { icon: "discord", link: "", target: "_blank" },
-];
+export default {
+  title: "Adocs",
+  description: "私が作成した素晴らしいドキュメントテンプレート",
+};
 ```
 
-By default only 7 popular icons are provided. If you want to add a custom icon, use the SVG property to define an svg image.
+デベロッパーツールをチェックすると、メタタイトルと説明が変更されていることがわかります。
+
+![title-and-description](https://user-images.githubusercontent.com/62628408/201539383-8b05db4c-dc00-4919-8bbc-f29cc77b2a00.png)
+
+## タイトルとロゴ
+
+ロゴタイトルを変更し、イメージを追加するには、同じ`config.js`ファイル内の`themeConfig`オブジェクトに以下のマークアップを貼り付けます。これにより、現在のタイトルが上書きされ、ドキュメントサイトにロゴが追加されます。
 
 ```js
-}
-  "discord"
-  "facebook"
-  "github"
-  "instagram"
-  "linkedin"
-  "slack"
-  "twitter"
-  "youtube"
-  { svg: string };
-{
+// config.js
+export default {
+  themeConfig: {
+    logo: "/logo.svg",
+    siteTitle: "Adocs",
+  },
+};
 ```
 
+画像ソースには、画像URLを渡すか、ローカル画像へのパスを指定します。ローカルで行う場合は、画像を `public` ディレクトリ内に配置してください。
+
+### 出力
+
+![logo-and-title](https://user-images.githubusercontent.com/62628408/201539442-123b92cc-3c59-423d-a183-280ab8eb23be.png)
+
 ::: warning
-For the SVG icon, make sure you add the role="img" property, this allows the string convert it properly.
+注意：`public`ディレクトリ内のファイルは、ルートパスで提供されます。
+そのため、`../public/logo.svg`の代わりに`/logo.svg`を使用してください。
 :::
 
-![navbar-2](https://user-images.githubusercontent.com/62628408/201539773-a50280b7-91d4-4d4a-9ba7-a5c227fb9742.png)
+## ナビゲーションバー
 
-## Sidebar
+`Navbar`のカスタマイズは非常に簡単です。`themeConfig`ファイル内に、次のマークアップを貼り付けます。ここでは、アンカーテキスト `text` とパス `link` を定義したオブジェクトを持っています。
 
-VitePress also comes with built-in components like sidebar menus. To add a sidebar, create an object called sidebar and inside we add nested objects that takes in three values; the nested title, collapsible functionality (Default is set to true) and the nested links.
+```js
+// .vitepress/config.js
+{
+  // ...
+   nav: [
+    { text: "About", link: "/about" },
+    { text: "Contact", link: "/contact" },
+    { text: "Guide", link: "/guide" },
+    { text: "Configs", link: "/configs" },
+    { text: "Changelog", link: "https://github.com/Evavic44" },
+  ],
+  // ...
+}
+```
+
+基本的には、`http://localhost:5173/about` に移動すると、aboutページに移動するはずです（まだ作成していませんが）。
+
+### 出力
+
+![navbar](https://user-images.githubusercontent.com/62628408/201539594-8e8f1d80-19dc-4335-b82b-fee5a23a5d30.png)
+
+ナビゲーションリンクは、ドロップダウンメニューにすることもできます。これを追加するには、リンクのプロパティの代わりにアイテムオブジェクトを使用します。これには、リンクの配列が含まれます。
+
+```js
+// .vitepress/config.js
+{
+  text: "Changelog",
+  items: [
+   { text: "v0.0.1", link: "/item-1" },
+   { text: "v0.0.2", link: "/item-2" },
+   { text: "v0.0.3", link: "/item-3" },
+  ],
+},
+```
+
+これで、changelogがそれぞれのリンクを内部に持つドロップダウンメニューになります。
+
+### 出力
+
+![dropdown-menu](
+
+https://user-images.githubusercontent.com/62628408/201539734-5072b7f7-7dfb-44a8-bba8-07d55a6785a7.png)
+
+これで、VitePressでモダンなドキュメントを構築する方法を学びました。ドキュメントは、プロジェクトの成長と利用者の増加にともなって、常に重要な役割を果たします。VitePressを使用すると、ドキュメント作成プロセスを簡素化し、開発者がより効果的にコミュニケーションを行うのに役立ちます。
+
+## サイドバー
+
+VitePressには、サイドバーメニューなどの組み込みコンポーネントも付属しています。サイドバーを追加するには、サイドバーというオブジェクトを作成し、その内部に、ネストされたタイトル、折りたたみ機能（デフォルトはtrueに設定）、およびネストされたリンクを取るネストされたオブジェクトを追加します。
 
 ```js
 // .vitepress/config.js
 sidebar: [
     {
-      text: "Section A",
+      text: "セクションA",
       collapsible: true,
       items: [
-        { text: "Introduction", link: "/introduction" },
-        { text: "Getting Started", link: "/getting-started" },
+        { text: "はじめに", link: "/introduction" },
+        { text: "入門", link: "/getting-started" },
       ],
     },
     {
-      text: "Section B",
+      text: "セクションB",
       collapsible: false,
       items: [
-        { text: "Introduction", link: "/introduction" },
-        { text: "Getting Started", link: "/getting-started" },
+        { text: "はじめに", link: "/introduction" },
+        { text: "入門", link: "/getting-started" },
       ],
     },
     {
-      text: "Section C",
+      text: "セクションC",
       collapsible: true,
       items: [
-        { text: "Introduction", link: "/introduction" },
-        { text: "Getting Started", link: "/getting-started" },
+        { text: "はじめに", link: "/introduction" },
+        { text: "入門", link: "/getting-started" },
       ],
     },
   ],
 ```
 
-By adding collapsible: "true" to the sidebar object, it shows a toggle button to hide/show each section. You can create as much sections as you want.
+サイドバーオブジェクトにcollapsible: "true"を追加することで、各セクションを表示/非表示するトグルボタンが表示されます。セクションはいくつでも作成できます。
 
-### Output
+### 出力
 
 ![sidebar-2](https://user-images.githubusercontent.com/62628408/201539859-92dffaf2-8886-4b11-86de-dd4847632536.png)
 
-You can see section B is not collapsible and we have that aesthetic next page button on the bottom of the page.
+セクションBは折りたたみ不可であり、ページの下部に見栄えの良い次のページボタンが表示されます。
 
-## Page Routing
+## ページルーティング
 
-As explained earlier, VitePress automatically converts every `.md` file inside the root of the docs directory to static html that can be accessed in the address bar. For instance the `index.md` is converted to `index.html`, and `about.md`, about.html and so on.
+先ほど説明したように、VitePressは、docsディレクトリのルート内のすべての`.md`ファイルを静的HTMLに自動変換し、アドレスバーでアクセスできるようにします。たとえば、`index.md`は`index.html`に、`about.md`は`about.html`などに変換されます。
 
-Since you've created your nav links and pointed them to their respective URLs, you can access these pages easily by creating them.
+ナビゲーションリンクを作成し、それらをそれぞれのURLに指定したので、これらのページに簡単にアクセスできます。
 
 ```
 docs/
@@ -289,20 +373,20 @@ docs/
 └── get-started.md
 ```
 
-Create these files inside your docs folder and add a simple markup inside them just to see how this works. This page is basic markdown so all your markdown syntax like links, code blocks, headings, etc works here.
+これらのファイルをdocsフォルダ内に作成し、単純なマークアップを追加して、これがどのように機能するかを見てみましょう。このページは基本的なMarkdownなので、リンク、コードブロック、見出しなど、すべてのMarkdown構文がここで機能します。
 
-Just for testing purposes, copy this markdown content and paste it inside any of the `.md` file you just created.
+テスト目的で、このMarkdownコンテンツをコピーして、作成した`.md`ファイルのいずれかに貼り付けてください。
 
 ```md
 # About
 
-Welcome to the about page.
+Aboutページへようこそ。
 
-This markdown supports html elements like the `p` tag coupled with inline styles
+このMarkdownは、インラインスタイルを備えた `p` タグなどのHTML要素をサポートしています。
 
 <p style="color: #ff7340; border: 1px solid rgba(255, 135, 23, 0.25); border-radius:5px; padding: 1rem;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 
-Even satire code snippets with syntax highlighting are also supported. 😅
+シンタックスハイライト付きの風刺コードスニペットもサポートされています。😅
 
 const lang = prompt("What is your favorite programming language?");
 
@@ -310,24 +394,20 @@ const lang = prompt("What is your favorite programming language?");
 ? alert("JavaScript to the world! 🚀🟡")
 : alert(`We don't permit such languages here 💩`);
 
-Of course, images are not left out.
+当然、画像も含まれています。
 
 <img src="/logo.svg" alt="adocs logo">
 ```
 
-### Output
+### 出力
 
 ![page-routing](https://user-images.githubusercontent.com/62628408/201539985-9308aaff-e98b-44e0-ad48-e990e788fd12.gif)
 
-Great! You've set-up the docs, added a navigation menu with dropdown feature, added a sidebar, and customized the links to navigate to different pages. Next up, let's work on the home page.
+素晴らしいですね！ドキュメントをセットアップし、ドロップダウン機能付きのナビゲーションメニューを追加し、サイドバーを追加し、リンクをカスタマイズして、異なるページに移動できるようにしました。次は、ホームページの作成に取り組みましょう。
 
-## Customizing the home page.
+## ヒーローセクション
 
-Just like every other components, VitePress provides us with markup for building the home page. I've broken it down into three parts: Hero, features, and footer section.
-
-## Hero Section
-
-First, we'll start with the hero section. Replace the Hello World text in the `index.md` page with the following markup.
+最初に、ヒーローセクションから始めます。 `index.md` ページのHello Worldテキストを次のマークアップで置き換えます。
 
 ```bash
 # docs/index.md
@@ -336,24 +416,24 @@ layout: home
 
 hero:
   name: Adocs
-  text: Static docs template built with VitePress.
+  text: VitePressで構築された静的ドキュメントテンプレート。
   image:
     src: /logo-big.svg
-    alt: Adocs logo
-  tagline: A free to use template for creating docs for your projects
+    alt: Adocsロゴ
+  tagline: プロジェクトのドキュメントを作成するための無料テンプレート
   actions:
     - theme: brand
-      text: Get Started
+      text: 開始する
       link: /get-started
     - theme: alt
-      text: View on GitHub
+      text: GitHubで見る
       link: https://github.com/evavic44/adocs-template
 ---
 ```
 
-## Features Section
+## 機能セクション
 
-Additionally, you can also add a features section after the hero section. Simply paste the code below under the hero objects.
+さらに、ヒーローセクションの後に機能セクションを追加することもできます。 単に、次のコードをヒーローオブジェクトの下に貼り付けます。
 
 ```bash
 # /docs/index.md
@@ -362,60 +442,60 @@ link: https://github.com/evavic44/adocs-template
 
 features:
   - icon: ⚡️
-    title: Adocs, The DX that can't be beat
+    title: Adocs、DXの最高峰
     details: Lorem ipsum...
   - icon: 🎉
-    title: Power of Vue meets Markdown
+    title: VueのパワーとMarkdownの出会い
     details: Lorem ipsum...
   - icon: 🔥
-    title: Simple and minimal, always
+    title: シンプルで最小限、常に
     details: Lorem ipsum...
   - icon: 🎀
-    title: Stylish and cool
+    title: おしゃれでクール
     details: Lorem ipsum...
 ---
 ```
 
-### Output
+### 出力
 
 ![hero-redesign](https://user-images.githubusercontent.com/62628408/201540116-6546ba1f-dc43-4490-a6e5-b513eaf3ced6.png)
 
-## Footer
+## フッター
 
-You can add a footer message on the bottom of the page but this will only show up in the home page.
+ページの下部にフッターメッセージを追加することもできますが、これはホームページでのみ表示されます。
 
 ::: warning
-The footer will not be displayed when the SideBar is visible.
-To add the footer component, go to the `config.js file` and paste the markup inside the `themeConfig` object
+サイドバーが表示されている場合、フッターは表示されません。
+フッターコンポーネントを追加するには、 `config.jsファイル` に移動し、マークアップを `themeConfig` オブジェクト内に貼り付けます。
 :::
 
 ```js
 // .vitepress/config.js
  footer: {
-   message: "Released under the MIT License.",
-   copyright: "Copyright © 2022-present Adocs",
+   message: "MITライセンスでリリースされています。",
+   copyright: "著作権 © 2022-present Adocs",
  },
 ```
 
-### Output
+### 出力
 
 ![footer](https://user-images.githubusercontent.com/62628408/201540337-4472a86e-f5cd-42d4-b40d-da1199148d2d.png)
 
-Aside from the markup, you can also customize the components using custom CSS to change things like fonts family, colors, layout, ETC.
+マークアップ以外にも、カスタムCSSを使用してフォントファミリー、カラー、レイアウトなどを変更することでコンポーネントをカスタマイズできます。
 
-## Custom CSS
+## カスタムCSS
 
-The default theme CSS is customized by overriding root level CSS variables. If you want, you can check out the full list of [css variables customizable](https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css).
+デフォルトのテーマCSSは、ルートレベルのCSS変数をオーバーライドしてカスタマイズされます。 必要に応じて、[css variables customizable](https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css) の完全なリストを確認できます。
 
-To do get started, create a `.vitepress/theme directory`, and inside this theme folder, add an `index.js` and `custom.css` file. If you've been following along, you can use the terminal command below to do this quickly.
+開始するには、`.vitepress/theme` ディレクトリを作成し、このテーマフォルダー内に `index.js` と `custom.css` ファイルを追加します。 これまでに従っていた場合、次のターミナルコマンドを使用してこれをすばやく行うことができます。
 
 ```bash
 mkdir docs/.vitepress/theme && touch docs/.vitepress/theme/index.js && touch docs/.vitepress/theme/custom.css
 ```
 
-If you ran into any issues with the terminal command, just create the files manually and move on to the next step.
+ターミナルコマンドで問題が発生した場合は、ファイルを手動で作成して次のステップに進んでください。
 
-Here's an overview of the folder structure.
+以下は、フォルダー構造の概要です。
 
 ```bash
 docs/
@@ -433,7 +513,7 @@ docs/
 └── get-started.md
 ```
 
-After creating these files, inside the `.vitepress/theme/index.js file`, paste the import commands.
+これらのファイルを作成した後、 `.vitepress/theme/index.js` ファイル内に、インポートコマンドを貼り付けます。
 
 ```js
 // .vitepress/theme/index.js
@@ -443,15 +523,15 @@ import "./custom.css";
 export default DefaultTheme;
 ```
 
-### Color Theme
+### カラーテーマ
 
-The colors are controlled by the CSS variables. You can simply replace them with any colors you want.
+カラーはCSS変数で制御されています。 好きな色に置き換えるだけです。
 
 ::: tip
-This color has a provision for both light and dark mode. So make sure you change them accordingly.
+このカラーは、ライトモードとダークモードの両方に対応しています。 したがって、それに応じて変更してください。
 :::
 
-Here's an example of my custom colors
+以下は、カスタムカラーの例です。
 
 ```css
 /* .vitepress/theme/custom.css */
@@ -467,13 +547,15 @@ Here's an example of my custom colors
 }
 ```
 
-If you don't see the effects immediately, try ending the server and starting it again.
+効果がすぐに表示されない場合は、サーバーを終了して再起動してみてください。
 
-Aside from the color themes, you can also override other things like, font family, typography, layout, breakpoints, etc.
+カラーテーマ以外にも、フォントファミリー、タイポグラフィ
 
-## Fonts
+、レイアウト、ブレークポイントなど、フォントを変更する方法もオーバーライドできます。
 
-[Google fonts](https://fonts.google.com/) can be imported inside the CSS file to override the default font family.
+## フォント
+
+[Google fonts](https://fonts.google.com/) をCSSファイルにインポートして、デフォルトのフォントファミリーを上書きできます。
 
 ```css
 @import url(https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic);
@@ -500,48 +582,43 @@ Aside from the color themes, you can also override other things like, font famil
 }
 ```
 
-With the `--vp-font-family-base` variable you can change the main font and `--vp-font-family-mono,` the font for code snippets.
+`--vp-font-family-base` 変数を使用してメインフォント、`--vp-font-family-mono` を使用してコードスニペット用のフォントを変更できます。
 
-### Output
+### 出力
 
-![banner](https://user-images.githubusercontent.com/62628408/201538130-a1008969-06ae-4aad-9ea0-b77384d6bac1.png)
+![banner](https://user-images.githubusercontent.com/62628408/201538130-a100889-06ae-4aad-9ea0-b77384d6bac1.png)
 
-You've successfully customized the theme and changed the font family using CSS. Though there's more you can do in regards to styling, but at this point, I'm sure it's clearer how you can customize your docs with CSS. Let's discuss hosting in the next section.
+CSSを使用してテーマをカスタマイズし、フォントファミリーを変更しました。 スタイリングに関しては他にもできることがありますが、この段階では、どのようにしてCSSでドキュメントをカスタマイズできるかが明確になったと思います。 次は、ホスティングについて議論しましょう。
 
-## Hosting
+## ホスティング
 
-You can publish or host your docs site when you're done to different platforms like: [Netlify](https://netlify.com/), [Vercel](https://vercel.com), [AWS Amplify](https://aws.amazon.com/amplify/), etc.
+ドキュメントサイトの作成が完了したら、[Netlify](https://netlify.com/)、[Vercel](https://vercel.com)、[AWS Amplify](https://aws.amazon.com/amplify/)などの異なるプラットフォームに公開またはホストできます。
 
-First, run the build command
+まず、ビルドコマンドを実行します。
 
 ```bash
 npm run docs:build
 ```
 
-This should create a new dist folder that contains all the static files of your docs. In your hosting service, add these commands to their respective fields.
-Build command: npm run docs:build
-Output directory: docs/.vitepress/dist
-
-This should create a new `dist` folder that contains all the static files of your docs. In your hosting service, add these commands to their respective fields.
-
-- Build command: `npm run docs:build`
-- Output directory: `docs/.vitepress/dist`
+これにより、すべてのドキュメントの静的ファイルを含む新しい `dist` フォルダーが作成されます。 ホスティングサービスでは、これらのコマンドを対応するフィールドに追加します。
+ビルドコマンド: `npm run docs:build`
+出力ディレクトリ: `docs/.vitepress/dist`
 
 ![deploy-settings-vercel](https://user-images.githubusercontent.com/62628408/201540859-095ea3c0-5d97-4eb4-98a5-2601149d96ed.png)
 
-After editing the settings, save, and deploy.
+設定を編集してから、保存してデプロイします。
 
-## Conclusion
+## 結論
 
-In this tutorial, you've set-up a full-fledged documentation site and customized it using CSS and VitePress built-in components. However, this tutorial only covers a fragment of what is possible with VitePress, to learn more, check out the VitePress docs.
+このチュートリアルでは、VitePressを使用してフル機能のドキュメントサイトをセットアップし、CSSとVitePressの組み込みコンポーネントをカスタマイズしました。 ただし、このチュートリアルはVitePressで可能なことの一部に過ぎません。 もっと学びたい場合は、VitePressのドキュメントを確認してください。
 
-## Resources
+## リソース
 
-- [Live Demo](https://adocs.vercel.app)
-- [GitHub Repo](https://github.com/Evavic44/adocs)
+- [ライブデモ](https://adocs.vercel.app)
+- [GitHubリポジトリ](https://github.com/Evavic44/adocs)
 
 <hr>
 
-If you are an open source ardent like myself or you enjoy hearing about such cool projects, do follow me on my socials so you don't miss my next post. Cheers. 🍷
+このような素晴らしいプロジェクトに興味を持っている場合は、私のソーシャルメディアをフォローして、次の投稿を見逃さないようにしてください。 乾杯。 🍷
 
-[GitHub](https://github.com/evavic44) [Twitter](https://twitter/.com/victorekea) [Blog](https://eke.hashnode.dev) [Portfolio](https://victoreke.com)
+[GitHub](https://github.com/evavic44) [Twitter](https://twitter/.com/victorekea) [ブログ](https://eke.hashnode.dev) [ポートフォリオ](https://victoreke.com)

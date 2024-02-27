@@ -5,9 +5,9 @@
   <p>This repository serves as a resource for the tutorial, <a href="https://www.freecodecamp.org/news/how-to-build-a-modern-documentation-site-with-vitepress/">How to Build a Modern Documentation Site with VitePress</a> posted on freeCodeCamp</p>
 </div>
 
-## Run project locally
+## ローカルでプロジェクトを実行
 
-Use this command below to boot this project locally.
+このプロジェクトをローカルで実行するには、以下のコマンドを使用してください。
 
 ```bash
 git clone https://github.com/Evavic44/adocs.git
@@ -17,18 +17,20 @@ cd adocs
 npm install
 
 npm run docs:dev
+
+npx vitepress build docs
 ```
 
-Visit [https://localhost:5173](https://localhost:5173) to see your site
+サイトをご覧いただくには、[https://localhost:5173](https://localhost:5173)にアクセスしてください
 
-## Build
-You may run this command to build the docs
+## ビルド
+ドキュメントをビルドするには、以下のコマンドを実行できます。
 
 ```bash
 npm run docs:build
 ```
 
-## Folder Structure
+## フォルダー構造
 
 ```
 docs/
